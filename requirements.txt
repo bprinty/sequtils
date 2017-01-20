@@ -1,0 +1,2 @@
+cached_property>=1.2.0
+editdistance>=0.3.1
