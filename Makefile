@@ -21,6 +21,11 @@ clean:
 	find . -name '*.egg' -exec rm -fr {} +
 
 
+tag:
+        VER=$(VERSION) && if [ `git tag | grep "$$VER" | wc -l` -ne 0 ]; then git tag -d $$VER; fi
+        VER=$(VERSION) && git tag $$VER -m "sequtils v$$VER"
+
+
 release: tag
 	VER=$(VERSION) && git push origin :$$VER || echo 'Remote tag available'
 	VER=$(VERSION) && git push origin $$VER
