@@ -131,5 +131,37 @@ Utilities
 +------------------------------------+------------------------------------------------------------+
 
 
+Command-Line Usage
+==================
+
+Once sequtils is installed, all methods can be accessed via the ``sequtils`` entry point:
+
+.. code-block:: bash
+
+    ~$ sequtils
 
 
+To run a specific method on a sequence, use:
+
+.. code-block:: bash
+
+    ~$ sequtils gc_skew AGTAGTAGTTTAGGTTAGGTAG
+    8.0
+
+
+For commands comparing sequences, simply use both sequences as arguments:
+
+.. code-block:: bash
+
+    ~$ sequtils edit AGTAGTAGTAGTAT AGTAGTAGTAGAAAAT
+    3
+
+
+And finally, to supply command line arguments to a method, do the following:
+
+.. code-block:: bash
+
+    ~$ sequtils wrap AGTAGTAGTAGTATAGTAGTAGTAGAAAAT bases=10
+    AGTAGTAGTA
+    GTATAGTAGT
+    AGTAGAAAAT

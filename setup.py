@@ -50,5 +50,10 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='nose.collector',
-    tests_require=test_requirements
+    tests_require=test_requirements,
+    entry_points={
+        'console_scripts': [
+            'sequtils = sequtils.__main__:main'
+        ]
+    },
 )
