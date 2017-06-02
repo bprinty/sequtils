@@ -1,17 +1,21 @@
 #!/usr/bin/env python
 
 
+import os
+import re
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-import sequtils
 
-requirements = [
-    'cached_property>=1.2.0',
-    'editdistance>=0.3.1'
-]
+with open(os.path.join('sequtils', '__init__.py'), 'r') as fi:
+    __version__ = re.search(r'__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fi.read()).group(1)
+
+
+with open('requirements.txt', 'r') as reqs:
+    requirements = map(lambda x: x.rstrip(), reqs.readlines())
+
 
 test_requirements = [
     'nose',
@@ -25,7 +29,7 @@ with open('README.rst') as readme_file:
 
 setup(
     name='sequtils',
-    version=sequtils.__version__,
+    version=__version__,
     description="Python utilities for sequence comparison, quantification, and feature extraction.",
     long_description=readme,
     author="atgtag",
