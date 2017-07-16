@@ -2,7 +2,7 @@
 
 __author__ = 'atgtag'
 __email__ = 'atgtag@genova.io'
-__version__ = '0.0.9'
+__version__ = '0.0.10'
 
 
 # metrics
