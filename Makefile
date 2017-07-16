@@ -25,19 +25,18 @@ tag:
 	VER=$(VERSION) && git tag $$VER -m "sequtils v$$VER"
 
 
-.PHONY: release
-release: tag
-	VER=$(VERSION) && git push origin :$$VER || echo 'Remote tag available'
-	VER=$(VERSION) && git push origin $$VER
-	python setup.py sdist upload -r atgtagtest
-	python setup.py sdist upload -r atgtag
-
-
 .PHONY: build
 build: clean
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist
+
+
+.PHONY: release
+release: build tag
+	VER=$(VERSION) && git push origin :$$VER || echo 'Remote tag available'
+	VER=$(VERSION) && git push origin $$VER
+	twine upload --skip-existing -r atg dist/*
 
 
 .PHONY: install
