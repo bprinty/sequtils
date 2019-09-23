@@ -1,3 +1,23 @@
+
+|Build status| |Code coverage| |Maintenance yes| |GitHub license| |Documentation Status|
+
+.. |Build status| image:: https://travis-ci.org/genova-io/sequtils.png?branch=master
+   :target: https://travis-ci.org/genova-io/sequtils
+
+.. |Code coverage| image:: https://codecov.io/gh/genova-io/sequtils/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/genova-io/sequtils
+
+.. |Maintenance yes| image:: https://img.shields.io/badge/Maintained%3F-yes-green.svg
+   :target: https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity
+
+.. |GitHub license| image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
+   :target: https://github.com/genova-io/sequtils/blob/master/LICENSE
+
+.. |Documentation Status| image:: https://readthedocs.org/projects/sequtils/badge/?version=latest
+   :target: http://sequtils.readthedocs.io/?badge=latest
+
+
+
 sequtils
 ========
 
