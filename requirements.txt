@@ -1,2 +1,4 @@
-cached_property>=1.2.0
+gems>=0.4.0
+PyYAML>=3.10
+future>=0.17.1
 editdistance>=0.3.1

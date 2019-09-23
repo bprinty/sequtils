@@ -18,8 +18,10 @@ with open('requirements.txt', 'r') as reqs:
 
 
 test_requirements = [
-    'nose',
-    'nose-parameterized'
+    'pytest',
+    'pytest-cov',
+    'pytest-runner',
+    'parameterized'
 ]
 
 
