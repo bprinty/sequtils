@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
+# imports
+# -------
 import sys
 import editdistance as ed
 if sys.version_info >= (3, 0):
@@ -9,6 +11,8 @@ else:
     from itertools import imap
 
 
+# functions
+# ---------
 def hamming(seq1, seq2):
     """
     Calculate hamming distance between sequences.
@@ -38,4 +42,3 @@ def edit(seq1, seq2):
         2
     """
     return int(ed.eval(seq1, seq2))
-

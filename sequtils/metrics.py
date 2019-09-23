@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-#
-# TODO: IMPLEMENT THESE FUNCTIONS IN CYTHON FOR FAST COMPUTATION
-# 
 
-import string
+
+# imports
+# -------
 from zlib import compress
 import re
 from math import log
-from itertools import product
 
 
+# functions
+# ---------
 def polydict(seq, nuc='ACGT'):
     """
     Computes largest homopolymer for all specified
@@ -91,7 +91,7 @@ def gc_skew(seq):
     Calculate GC skew (g-c)/(g+c) for sequence. For
     homopolymer stretches with no GC, the skew will be rounded
     to zero.
-    
+
     Args:
         seq (str): Nucleotide sequence
 
@@ -112,7 +112,7 @@ def gc_shift(seq):
     Calculate GC shift (a + t)/(g + c) for sequence. For
     homopolymer stretches with no GC, the shift will be rounded to
     the number of bases in the sequence.
-    
+
     Args:
         seq (str): Nucleotide sequence
 
@@ -136,7 +136,7 @@ def dna_weight(seq):
 
     See https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/dna-and-rna-molecular-weights-and-conversions.html
     for details on conversions.
-    
+
     Args:
         seq (str): Nucleotide sequence
 
@@ -154,7 +154,7 @@ def rna_weight(seq):
 
     See https://www.thermofisher.com/us/en/home/references/ambion-tech-support/rna-tools-and-calculators/dna-and-rna-molecular-weights-and-conversions.html
     for details on conversions.
-    
+
     Args:
         seq (str): Nucleotide sequence
 
@@ -169,7 +169,7 @@ def rna_weight(seq):
 def aa_weight(seq):
     """
     Return molecular weight of amino acid sequence (g/mol).
-    
+
     Args:
         seq (str): Nucleotide sequence
 
@@ -177,7 +177,7 @@ def aa_weight(seq):
         >>> sequtils.aa_weight('AGGATAAG')
         700.8
     """
-    wmap = {'A': 89.1, 'R': 174.2, 'N': 132.1, 'D': 133.1, 'C': 121.2, 'E': 147.1, 'Q': 146.2, 'G': 75.1, 'H': 155.2, 'I': 131.2, 'L': 131.2, 'K': 146.2, 'M': 149.2, 'F': 165.2, 'P': 115.1, 'S': 105.1, 'T': 119.1, 'W': 204.2, 'Y': 181.2, 'V': 117.1}
+    wmap = {'A': 89.1, 'R': 174.2, 'N': 132.1, 'D': 133.1, 'C': 121.2, 'E': 147.1, 'Q': 146.2, 'G': 75.1, 'H': 155.2, 'I': 131.2, 'L': 131.2, 'K': 146.2, 'M': 149.2, 'F': 165.2, 'P': 115.1, 'S': 105.1, 'T': 119.1, 'W': 204.2, 'Y': 181.2, 'V': 117.1}  ## noqa
     return sum([wmap[i] for i in seq.replace('*', '')])
 
 
@@ -193,4 +193,3 @@ def zipsize(seq):
         39.31
     """
     return len(compress(seq.encode()))
-

@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# regular
+# imports
+# -------
 import sys
-import os
 import argparse
-import json
-from gems import composite
 from functools import partial
 import types
 
@@ -13,17 +11,20 @@ from . import __version__
 import __init__ as library
 
 
-# parser
+# config
+# ------
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers()
 
 
 # version
+# -------
 parser_version = subparsers.add_parser('version')
 parser_version.set_defaults(func=lambda x: sys.stderr.write(__version__ + '\n'))
 
 
 # subcommands
+# -----------
 def run(args, func=len):
     largs, kwargs = [], {}
     for arg in args.args:
@@ -36,7 +37,7 @@ def run(args, func=len):
             kwargs[k] = v
         else:
             largs.append(arg)
-    print func(*largs, **kwargs)
+    sys.stdout.write(func(*largs, **kwargs) + '\n')
     return
 
 
@@ -50,6 +51,7 @@ for name in dir(library):
 
 
 # exec
+# ----
 def main():
     args = parser.parse_args()
     args.func(args)
