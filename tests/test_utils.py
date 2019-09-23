@@ -2,8 +2,7 @@
 
 
 import unittest
-from nose.tools import nottest
-from nose_parameterized import parameterized
+from parameterized import parameterized
 
 import sequtils
 
@@ -26,4 +25,3 @@ class TestUtils(unittest.TestCase):
     def test_wrap(self, sequence, bases, res):
         self.assertEqual(sequtils.wrap(sequence, bases=bases), res)
         return
-

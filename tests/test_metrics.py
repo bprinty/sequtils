@@ -2,8 +2,7 @@
 
 
 import unittest
-from nose.tools import nottest
-from nose_parameterized import parameterized
+from parameterized import parameterized
 
 import sequtils
 
