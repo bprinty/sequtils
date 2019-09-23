@@ -1,4 +1,4 @@
 gems>=0.4.0
 PyYAML>=3.10
-future>=0.17.1
+future>=0.16.0
 editdistance>=0.3.1
