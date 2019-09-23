@@ -98,4 +98,3 @@ class TestMetrics(unittest.TestCase):
     def test_zipsize(self, sequence, res):
         self.assertEqual(sequtils.zipsize(sequence), res)
         return
-
